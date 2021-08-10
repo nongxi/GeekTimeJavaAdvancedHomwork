@@ -1,0 +1,178 @@
+$ javap -c -verbose Hello.class
+Classfile /G:/Project/target/classes/Hello.class  //class文件位置
+  Last modified Aug 6, 2021; size 1123 bytes      //最后一次更改时间，文件的大小
+  MD5 checksum 7889b3fa0c821b507a3121c6d8d384a7   //检查
+  Compiled from "Hello.java"                      //编译的源文件
+public class Hello                                // 类名
+  minor version: 0                                // 编译的JDK的小版本号
+  major version: 52                               // 编译的主版本号，52对应了JDK8
+  flags: ACC_PUBLIC, ACC_SUPER                    //表明该类型是PUBLIC,有父类
+Constant pool:                                    // 常量池信息
+   #1 = Methodref          #17.#41        // java/lang/Object."<init>":()V      //* 常量池位置1，方法引用，占1个字节，该方法调用了编号为17和41的方法；从注释来看该方法是一个对象的初始化，放回值是空
+   #2 = String             #42            // Hello.calss                        // 常量池位置2，基本类型为string，占1个字节，调用常量池编号42的方法
+   #3 = Methodref          #43.#44        // java/util/logging/Logger.getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger; //常量池编号位置3，引用方法，占1个字节；调用常量池编号43和44的方法；从注释来看是获取日志记录的方法，日志的数据格式为string
+   #4 = Double             12.0d                                                 //常量池编号为4位置，Double数据类型，占两个字节，值得大小为12.0
+   #6 = Double             2.0d                                                  //常量池编号为4位置，Double数据类型，占两个字节，值得大小为2.0
+   #8 = Fieldref           #45.#46        // java/lang/System.out:Ljava/io/PrintStream;  // 常量池编号位置8，数据流引用，占一个字节，调用常量池编号为45和46的方法；从注释来看是打印数据流；
+   #9 = Class              #47            // java/lang/StringBuilder                     // 常量池编号为9，class，占一个字节；调用数据编号为47的引用；从注释来看是string数据的构造
+  #10 = Methodref          #9.#41         // java/lang/StringBuilder."<init>":()V        // 常量池编号为10,方法引用，占一个字节，调用常量池编号9和41的方法；从注释来看是string构造器的初始化，返回一个空对象；
+  #11 = String             #48            // a is less than b,the sum is :               // 常量池编号11，String格式的数据，占一个字节；调用常量池编号48的方法；从注释来看是打印日志的语句；
+  #12 = Methodref          #9.#49         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; //常量池编号12，方法引用，占用一个字节；调用常量池编号9和49的方法；从注释来看是调用StringBuilder的append方法和StringBuilder方法；
+  #13 = Methodref          #9.#50         // java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder; //常量池编号13，方法引用，占用一个字节；调用常量池编号9和50的方法；从注释看是调用StringBuilder的append方法；
+  #14 = Methodref          #9.#51         // java/lang/StringBuilder.toString:()Ljava/lang/String;       //常量池编号14，方法引用，占用一个字节；调用常量池编号9和51的方法；从注释看是调用StringBuilder的toString方法；
+  #15 = Methodref          #52.#53        // java/io/PrintStream.println:(Ljava/lang/String;)V           //常量池编号15，方法引用，占用一个字节；调用常量池编号52和53的方法；从注释看是调用PrintStream的println方法，方法参数为String格式并返回一个空对象；
+  #16 = Class              #54            // Hello                                                       // 常量池编号 16，类名，占一个字节；从注释来看类名是Hello
+  #17 = Class              #55            // java/lang/Object                                            // 常量池编号17，占用一个字符；调用常量池编号为55的方法；从注释来看是一个对象；
+  #18 = Utf8               <init>                                                                        // 常量池编号为18，UTF8编码格式，初始化方法
+  #19 = Utf8               ()V                                                                           // 常量池编号为19，UTF8编码格式，返回一个空对象
+  #20 = Utf8               Code                                                                          // 常量池编号为20，UTF8编码格式，代码位置
+  #21 = Utf8               LineNumberTable      // 常量池编号为21，UTF8编码格式，LineNumberTable（线程表）
+  #22 = Utf8               LocalVariableTable   // 常量池编号为22，UTF8编码格式，本地方法表
+  #23 = Utf8               this                 // 常量池编号为23，UTF8编码格式，当前对象的引用
+  #24 = Utf8               LHello;              // 常量池编号为24，UTF8编码格式，long格式的类名
+  #25 = Utf8               main                 // 常量池编号为24，UTF8编码格式，主方法
+  #26 = Utf8               ([Ljava/lang/String;)V   //常量池编号26，UTF8编码格式，占一个字节；long格式的String方法，返回一个空对象
+  #27 = Utf8               args                     //常量池编号27，UTF8编码格式，占一个字节；主方法的参数；
+  #28 = Utf8               [Ljava/lang/String;      //常量池编号28，UTF8编码格式，占一个字节；long格式的String方法；
+  #29 = Utf8               logger                   //常量池编号29，UTF8编码格式，占一个字节；自定义的logger日志名字；
+  #30 = Utf8               Ljava/util/logging/Logger; //常量池编号30，UTF8编码格式，占一个字节；long格式的日志方法；
+  #31 = Utf8               a    //常量池编号31，UTF8编码格式，占一个字节；常量a；
+  #32 = Utf8               I    //常量池编号32，UTF8编码格式，占一个字节；常量a的类型为int；
+  #33 = Utf8               b    //常量池编号33，UTF8编码格式，占一个字节；常量b；
+  #34 = Utf8               D    //常量池编号34，UTF8编码格式，占一个字节；常量a的类型为double；
+  #35 = Utf8               sum  //常量池编号35，UTF8编码格式，占一个字节；变量sum；
+  #36 = Utf8               StackMapTable                                //常量池编号36，UTF8编码格式，占一个字节；堆表；
+  #37 = Class              #28            // "[Ljava/lang/String;"      //常量池编号37，UTF8编码格式，占一个字节；调用常量池编号为28的方法；从注释来看是long格式的Strin数组
+  #38 = Class              #56            // java/util/logging/Logger   //常量池编号38，UTF8编码格式，占一个字节；调用常量池编号为56的方法；从注释来看调用日志的方法；
+  #39 = Utf8               SourceFile                                   //常量池编号39，UTF8编码格式，占一个字节；源文件；
+  #40 = Utf8               Hello.java                                   //常量池编号40，UTF8编码格式，占一个字节；源文件的类名是Hello.java；
+  #41 = NameAndType        #18:#19        // "<init>":()V               //常量池编号41，占一个字节，方法名;调用常量池编号为18和19的方法；从注释来看是返回一个初始化的void对象
+  #42 = Utf8               Hello.calss                                  //常量池编号42，UTF8编码格式，占一个字节；编译过的文件的是Hello.class；
+  #43 = Class              #56            // java/util/logging/Logger   //常量池编号43，UTF8编码格式，占一个字节；调用常量池编号为56的方法；从注释来看调用日志的方法；
+  #44 = NameAndType        #57:#58        // getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger;    //常量池编号38，UTF8编码格式，占一个字节，方法名；调用常量池编号为57和58的方法；从注释来看调用日志的方法；
+  #45 = Class              #59            // java/lang/System           //常量池编号45，占一个字节；调用常量池编号为59的方法；注释来看调用System的方法
+  #46 = NameAndType        #60:#61        // out:Ljava/io/PrintStream;  //常量池编号46，占一个字节，方法名；调用常量池编号为59的方法；注释来看调用System的方法为60和61的方法；注释来看调用IO类中的PrintStream方法
+  #47 = Utf8               java/lang/StringBuilder                      //常量池编号47，UTF8编码格式，占一个字节；StringBuilder构造方法
+  #48 = Utf8               a is less than b,the sum is :                //常量池编号48，UTF8编码格式，占一个字节；从注释来看打印日志的信息是“a is less than b,the sum is : ”
+  #49 = NameAndType        #62:#63        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder; //常量池编号49，占一个字节，方法名；调用常量池编号为62个63的方法；从注释来看是向long格式的String构造器中添加参数
+  #50 = NameAndType        #62:#64        // append:(D)Ljava/lang/StringBuilder; //常量池编号50，占一个字节，方法名；调用常量池编号为62个64的方法；从注释来看是向double格式的String构造器中添加参数
+  #51 = NameAndType        #65:#66        // toString:()Ljava/lang/String;       //常量池编号51，占一个字节，方法名；调用常量池编号为65个66的方法；从注释来看是调用String类中的toString方法
+  #52 = Class              #67            // java/io/PrintStream                 //常量池编号52，占用一个字节；调用常量池编号67的方法；从注释看是调用PrintStream的println方法；
+  #53 = NameAndType        #68:#69        // println:(Ljava/lang/String;)V       //常量池编号53，占用一个字节，方法名；调用常量池编号68和69的方法；从注释看是调用long格式的println方法；
+  #54 = Utf8               Hello                                                 //常量池编号54，utf8编码格式；Hello对象；
+  #55 = Utf8               java/lang/Object                                      //常量池编号55，utf8编码格式；表明这是一个对象；
+  #56 = Utf8               java/util/logging/Logger                              //常量池编号56，UTF8编码格式，占一个字节；表明调用一个Logger类型；
+  #57 = Utf8               getLogger                                             //常量池编号57，UTF8编码格式，占一个字节；表明调用getLogger方法；
+  #58 = Utf8               (Ljava/lang/String;)Ljava/util/logging/Logger;        //常量池编号58，UTF8编码格式，占一个字节；表明调用Logger方法；
+  #59 = Utf8               java/lang/System                                      //常量池编号59，UTF8编码格式，占一个字节；表明调用System的方法
+  #60 = Utf8               out                                                   //常量池编号59，UTF8编码格式，占一个字节；
+  #61 = Utf8               Ljava/io/PrintStream;                                 //常量池编号61，UTF8编码格式，UTF8编码格式，占一个字节；表明调用io类中的PrintStream方法
+  #62 = Utf8               append                                                //常量池编号62，UTF8编码格式，占一个字节，调用append方法
+  #63 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;         //常量池编号63，UTF8编码格式,占一个字节；表明调用类型为long格式的StringBuilder方法
+  #64 = Utf8               (D)Ljava/lang/StringBuilder;                          //常量池编号64，UTF8编码格式,占一个字节；表明调用类型为Double格式的StringBuilder方法
+  #65 = Utf8               toString                                              //常量池编号65，UTF8编码格式,占一个字节；表明调用toString方法
+  #66 = Utf8               ()Ljava/lang/String;                                  //常量池编号66，UTF8编码格式,占一个字节；表明调用String方法
+  #67 = Utf8               java/io/PrintStream                                   //常量池编号67，UTF8编码格式，UTF8编码格式，占一个字节；表明调用io类中的PrintStream方法
+  #68 = Utf8               println                                               //常量池编号68，UTF8编码格式,占用一个字节；表明调用常println方法；
+  #69 = Utf8               (Ljava/lang/String;)V                                 //常量池编号69，UTF8编码格式,占用一个字节；返回一个类型String的空对象；
+{
+  public Hello();           //类名
+    descriptor: ()V         //描述符对象
+    flags: ACC_PUBLIC       //声明为public方法
+    Code:                   //代码区
+      stack=1, locals=1, args_size=1                                                       // 栈深为1，本地方法长1，参数1；
+         0: aload_0                                                                        // 偏移量为0，占一个字节，将常量池位置为0的对象加载到栈上
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V      // 偏移量为1；实现接口方法，压入堆中第一个位置；
+         4: return                                                                         // 返回
+      LineNumberTable:                              // 对应代码的具体信息
+        line 3: 0                                   // 在java文件中的第三号
+      LocalVariableTable:                           //本地方法表
+        Start  Length  Slot  Name   Signature       //字段分别表示本地方法在常量池中的编号/长度/栈中的编号/引用名/变量类型（类型+类名）
+            0       5     0  this   LHello;         //常量池中的编号为0；这一段共占据五个字节；栈中的编号为1的位置/引用名为this/签名为long类型的Hello
+
+  public static void main(java.lang.String[]);      // 主方法信息
+    descriptor: ([Ljava/lang/String;)V              // 描述符，对象
+    flags: ACC_PUBLIC, ACC_STATIC                   //公共的，静态
+    Code:
+      stack=6, locals=7, args_size=1                // 栈深为6，本地方法长7，参数1；
+         0: ldc           #2                  // String Hello.calss             //偏移量为0，占据两个字节；将常量池编号为2的常量放入操作数栈中
+         2: invokestatic  #3                  // Method java/util/logging/Logger.getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger;//偏移量2，实现静态接口；对应常量池编号为3的对象，占据三个字节；
+         5: astore_1        //偏移量为5，对象a，占据一个字节，store表述出栈操作恢复数据到本地方法表，
+         6: iconst_1        //i表示数据类型为int，const表示加载对象到栈，1表示栈顶
+         7: istore_2        //i表示数据类型为int，store表述出栈操作恢复数据到本地方法表编号2的位置，占据一个字符
+         8: ldc2_w        #4                  // double 12.0d  //偏移量8，将常量池编号为4的double数组加载到栈顶，占据3个字节
+        11: dstore_3                          // 偏移量11，d表示数据类型为double，store表述出栈操作恢复数据到本地方法表3的位置，占据1个字节
+        12: dconst_0                          // 偏移量12，d表示数据类型为double，store表述出栈操作恢复数据到本地方法表0的位置，占据1个字节
+        13: dstore        5                   // 偏移量13，d表示数据类型为double，store表述出栈操作恢复数据到本地方法表3的位置，数值为5，占据两个字节
+        15: iload_2                           // 偏移量15，i表示数据类型为int，load表示将int数值推送到栈顶
+        16: i2d                               // 偏移量16，类型转换，int转为double类型，占据1个字节
+        17: dload_3                           // 偏移量17，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        18: dcmpg                             // 偏移量18，d表示数据类型为double，cmp表示compare比较，g表示相等，这里是大小比较的逻辑运算，占据一个字节
+        19: ifge          85                  // 偏移量19，ifge表示if great  then or equal,大于或等于，输出结果85，占据三个字节
+        22: iload_2                           // 偏移量22，i表示数据类型为int，load表示将int数值推送到栈顶，占据一个字节
+        23: i2d                               // 偏移量23，类型转换，int转为double类型，占据1个字节
+        24: dload_3                           // 偏移量24，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        25: dcmpg                             // 偏移量25，d表示数据类型为double，cmp表示compare比较，g表示相等，这里是大小比较的逻辑运算，占据一个字节
+        26: ifge          85                  // 偏移量26，ifge表示if great  then or equal,大于或等于，输出结果85，占据三个字节
+        29: iload_2                           // 偏移量29，i表示数据类型为int，load表示将int数值推送到栈顶，占据一个字节
+        30: i2d                               // 偏移量30，类型转换，int转为double类型，占据1个字节
+        31: dload_3                           // 偏移量31，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        32: dcmpg                             // 偏移量32，d表示数据类型为double，cmp表示compare比较，g表示相等，这里是大小比较的逻辑运算，占据一个字节
+        33: ifge          79                  // 偏移量33，ifge表示if great  then or equal,大于或等于，输出结果79，占据三个字节
+        36: dload_3                           // 偏移量36，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        37: iload_2                           // 偏移量37，i表示数据类型为int，load表示将int数值推送到栈顶，占据一个字节
+        38: i2d                               // 偏移量38，类型转换，int转为double类型，占据1个字节
+        39: dsub                              // 偏移量39，求和，占据1个字节
+        40: dstore_3                          // 偏移量40，d表示数据类型为double，store表述出栈操作恢复数据到本地方法表3的位置，占据1个字节
+        41: dload         5                   // 偏移量41，d表示数据类型为double，load表述出栈操作恢复数据到本地方法表，数值为5，占据两个字节
+        43: dload_3                           // 偏移量33，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        44: ldc2_w        #6                  //偏移量44，将常量池编号为6的double数组加载到栈顶，占据3个字节
+        47: ddiv                              //偏移量47，d表示数据类型为double，div表示除的运算，占据1个字节
+        48: dadd                              //偏移量48，d表示数据类型为double，add表示加的运算，占据1个字节
+        49: dload_3                           // 偏移量49，d表示数据类型为double，load表示将该double数值推送到栈顶，占据一个字节
+        50: dmul                              //偏移量50，数据类型double的乘法运算
+        51: dstore        5                   // 偏移量51，d表示数据类型为double数值为5，占据两个字节
+        53: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream; //偏移量53，取得静态方法常量池编号为8的对象，占据三个字节；从注释看是打印输出方法
+        56: new           #9                  // class java/lang/StringBuilder                    //偏移量56，new方法新建对象，新建常量池编号为9的对象，占据三个字节；从注释来看是StringBuilder方法
+        59: dup                                                                                   //偏移量59，复制栈顶数值并将复制值压入栈顶
+        60: invokespecial #10                 // Method java/lang/StringBuilder."<init>":()V      // 偏移量60，实现常量池编号为10的接口，占据三个字节；从注释看初始化并返回一个空的对象
+        63: ldc           #11                 // String a is less than b,the sum is :             //偏移量63，将常量池编号11的double数组加载到栈顶，占据两个字节；从注释来看是日志打印输出括号中的信息
+        65: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // 偏移量65，实现常量池编号为12的接口，占据三个字节；从注释看实现StringBuilder的append方法
+        68: dload         5                    // 偏移量68，d表示数据类型为double，load表述出栈操作恢复数据到本地方法表，数值为5，占据两个字节
+        70: invokevirtual #13                 // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder; // 偏移量70，实现常量池编号为13的接口，占据三个字节；从注释看实现StringBuilder的append方法
+        73: invokevirtual #14                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;       // 偏移量73，实现常量池编号为14的接口，占据三个字节；从注释看实现StringBuilder的toString方法
+        76: invokevirtual #15                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V            // 偏移量73，实现常量池编号为15的接口，占据三个字节；从注释看实现StringBuilder的PrintStream的println方法，返回一个对象
+        79: iinc          2, 1   //偏移量79，将int类型的数字实现自增功能，将 局部变量表中的i加1, 局部变量表中变为1，占据三个字节
+        82: goto          22     //偏移量80，goto指向偏移量22，占据三个字节
+        85: return               //偏移量85，表示返回
+      LineNumberTable:           //代码行数
+        line 6: 0                // 代码第6行对应偏移量0的操作
+        line 8: 6                // 代码第8行对应偏移量6的操作
+        line 9: 8                // 代码第9行对应偏移量8的操作
+        line 10: 12              // 代码第10行对应偏移量12的操作
+        line 12: 15              // 代码第12行对应偏移量15的操作
+        line 13: 22              // 代码第13行对应偏移量22的操作
+        line 14: 29              // 代码第14行对应偏移量29的操作
+        line 15: 36              // 代码第15行对应偏移量36的操作
+        line 16: 41              // 代码第16行对应偏移量41的操作
+        line 17: 53              // 代码第17行对应偏移量53的操作
+        line 13: 79              // 代码第13行对应偏移量12的操作
+        line 21: 85              // 代码第21行对应偏移量185的操作
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature                   //字段分别表示本地方法在常量池中的编号/长度/栈中的编号/引用名/变量类型（类型+类名）
+            0      86     0  args   [Ljava/lang/String;         //偏移量0，长度86，槽位为0，变量名args，类型为String
+            6      80     1 logger   Ljava/util/logging/Logger; //偏移量6，长度80，槽位为1，变量名logger，类型为Logger
+            8      78     2     a   I                           //偏移量8，长度78，槽位为2，变量名a，类型为int
+           12      74     3     b   D                           //偏移量12，长度74，槽位为3，变量名b，类型为double
+           15      71     5   sum   D                           //偏移量15，长度71，槽位为5，变量名sum，类型为double
+
+      StackMapTable: number_of_entries = 3      //JVM识别：一共有三个实体
+        frame_type = 255 /* full_frame */       //帧栈的信息，局部变量255，完整的一个栈帧
+          offset_delta = 22
+          locals = [ class "[Ljava/lang/String;", class java/util/logging/Logger, int, double, double ]
+          stack = []
+        frame_type = 56 /* same */ //帧栈的信息，局部变量相同，完整的一个栈帧
+        frame_type = 5 /* same */  //帧栈的信息，局部变量相同，完整的一个栈帧
+}
+SourceFile: "Hello.java" //源文件："Hello.java"
+

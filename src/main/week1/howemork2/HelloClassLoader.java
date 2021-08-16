@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.Base64;
 
 public class HelloClassLoader extends ClassLoader{

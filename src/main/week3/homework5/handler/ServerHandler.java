@@ -8,11 +8,13 @@ import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 import timeservice.TimeService;
 
+import java.time.LocalDate;
+
 public class ServerHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
     TimeService ts=new TimeService();
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg) throws Exception {
-        ByteBuf content = Unpooled.copiedBuffer("  Hello,Worlds!"+ts, CharsetUtil.UTF_8);
+        ByteBuf content = Unpooled.copiedBuffer("  Hello,Worlds!"+ LocalDate.now()+ts, CharsetUtil.UTF_8);
         FullHttpResponse response=new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK,content);
         response.headers().set(HttpHeaderNames.CONTENT_TYPE,"text/html");
         response.headers().set(HttpHeaderNames.CONTENT_LENGTH,content.readByte());

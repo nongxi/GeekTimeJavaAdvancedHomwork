@@ -25,7 +25,7 @@ public class AppServer {
             httpBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ServerInitializer())
-                    .option(ChannelOption.SO_BACKLOG, 128)
+                    .option(ChannelOption.SO_BACKLOG, 256)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
 
             // 绑定请求

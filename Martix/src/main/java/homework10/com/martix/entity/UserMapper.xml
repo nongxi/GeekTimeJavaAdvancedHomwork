@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ironxi.entity.UserMapper">
+<!-- 查询单个用户，ID名要唯一 -->
+  <select id="selectUser" resultType="com.ironxi.entity.User">
+    SELECT * FROM public.use where id=#{id};
+  </select>
+  <!-- selectAllUser的数据返回类型 resultType="User"此时相当于resultType="com.ironxi.entity.User"-->
+  <select id="selectAllUser" resultType="User">
+    SELECT * FROM public.use;
+  </select>
+  <insert id="addUser" parameterType="com.ironxi.entity.User" useGeneratedKeys="true">
+    INSERT INTO public.use (name,password) VALUES (#{name},#{password});
+    <!--跟在表use后面的是数据库中的字段，Values后面跟的是代码中的属性字段  -->
+  </insert>
+  
+  <update id="updateUser" parameterType="com.ironxi.entity.User">
+	UPDATE public.use SET name=#{name},password=#{password} WHERE id=#{id};
+  </update>
+  
+  <delete id="deleteUser">
+ 	 DELETE FROM public.use WHERE id=#{id};
+  </delete>
+  
+   <delete id="deleteAllUser">
+ 	 DELETE FROM public.use WHERE id=#{id};
+  </delete>
+</mapper> 

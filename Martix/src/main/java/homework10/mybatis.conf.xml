@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+		
+	<!-- environments可以配置多个环境变量，default指环境版本可以分为开发者模式和其他模式一般指向默认环境，
+	一个environmment对应一个sqlsessionfactory; -->
+	<properties resource="db.properties"/>
+	<typeAliases>
+		<!-- 为指定类型指定别名，使得mapper映射文件中可以简化引用
+		<typeAlias type="com.martix.entity.User" alias="User"/> -->
+		<!-- 为某个包下的所有类名指定别名，默认别名是对应的类名 -->
+		<package name="com.martix.entity"/>		
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+		<!-- transactionManager事物管理，分为两种，jdbc(依赖其jdbc的提交和回滚功能)和managed(需要自己去管理事务，让容器管理事务的生命周期操作，比如Spring和J2EE等容器管理事物的生命周期
+		) -->
+			<transactionManager type="JDBC" />
+			<!-- 数据源类型： 
+			1.UNPOOLED：这个类型的数据源实现只是在每次需要的时候打开和关闭连接（DDOS攻击一直循环连接让服务锁死）；使用UNPOOLED+postgreSQL是否可以防范DDOS攻击？
+			2.POOLED:这个类型的数据源实现了JDBC的缓存，避免每次创建新的数据库连接时都初始化和进行认证，加快程序响应，并发web通常采取这种做法来快速获得响应，设置连接数量和响应时间等等；
+			3.JNDI:这个类型的数据连接是为了配合Spring或应用服务器能够在外部或内部配置数据源的容器一起使用，在jnbi的上下文中引用，通过数据源的方式取出；-->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+	<!-- 定义映射sql语句文件 -->
+		<mapper resource="com/martix/entity/UserMapper.xml" />
+	</mappers> 
+</configuration>

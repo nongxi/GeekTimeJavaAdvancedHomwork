@@ -9,7 +9,7 @@ CREATE TABLE TUser(
     PRIMARY KEY(UserNumber)
 );
 
-INSERT INTO TUser VALUES(20093200,'Java1','18826221779','java@163.com',,'FALSE');
+
 -- issue
 CREATE TABLE TProduct(
     ProductNumber int(8) ,
